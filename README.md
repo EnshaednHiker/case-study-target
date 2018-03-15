@@ -1,11 +1,11 @@
-# react-template 
+# case-study-target 
 
 case study for completing recruiting at Target
 
 ## Installation
 
 ```sh
-npm install react-template --save
+npm install case-study-target --save
 ```
 
 
