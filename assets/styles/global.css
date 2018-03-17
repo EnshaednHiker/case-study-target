@@ -1,11 +1,11 @@
-body {
+/* body {
     display: grid;
     min-height: 100%;
     font-family: Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "main-image pricing"
                          "main-image controls"
                          "main-image controls"
@@ -29,7 +29,7 @@ body {
 }
 .product-highlights {
     grid-area: product-highlights-area;
-}
+} */
 
 
 

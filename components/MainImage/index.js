@@ -17,10 +17,11 @@ export default class MainImage extends React.Component {
             line-height: 30px;
        `;
        const DivWrapper = styled.div `
-        
+            background-color:blue;
+            grid-area: ${this.props.gridAreaName}; 
        `;
         return (
-                <DivWrapper className="main-image">
+                <DivWrapper>
                     <Title>{this.props.title}</Title>
                 </DivWrapper>
             )
