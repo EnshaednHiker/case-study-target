@@ -1,0 +1,50 @@
+body {
+    display: grid;
+    min-height: 100%;
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr
+    grid-template-areas: "main-image pricing"
+                         "main-image controls"
+                         "main-image controls"
+                         "main-image product-highlights"
+                         "reviews product-highlights"
+                         "reviews product-highlights";
+    grid-gap: 10px;
+}
+
+.main-image {
+    grid-area: main-image-area;
+}
+.pricing {
+    grid-area: pricing-area;
+}
+.controls {
+    grid-area: controls-area;
+}
+.reviews {
+    grid-area: reviews-area;
+}
+.product-highlights {
+    grid-area: product-highlights-area;
+}
+
+
+
+
+
+/* <div class="aside"></div>
+<div class="main"></div>
+<div class="footer"></div> */
+/* 
+.main {
+    grid-area: content;
+  }
+  .footer {
+    grid-area: footer;
+  }
+  .aside {
+    grid-area: sidebar;
+  } */
