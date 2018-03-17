@@ -14,7 +14,7 @@ class Main extends React.Component {
         super()
         this.state = {
             title: fauxStore.CatalogEntryView[0].title,
-            primaryImage: fauxStore.CatalogEntryView[0].Images[0].PrimaryImage,
+            primaryImage: fauxStore.CatalogEntryView[0].Images[0].PrimaryImage[0].image,
             alternateImages: fauxStore.CatalogEntryView[0].Images[0].AlternateImages
         }
     }
@@ -28,31 +28,72 @@ class Main extends React.Component {
         const gridAreaName_ProductHighlights = "product-highlights";
         const gridAreaName_Reviews = "reviews";
         const DivWrapper = styled.div`
-            display: grid;
-            height: 1200px;
+            height: auto;
             font-family: Helvetica, sans-serif;
             font-weight: 400;
             font-style: normal;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-template-areas: "${gridAreaName_MainImage} ${gridAreaName_Pricing}"
-                                 "${gridAreaName_MainImage} ${gridAreaName_Controls}"
-                                 "${gridAreaName_MainImage} ${gridAreaName_Controls}"
-                                 "${gridAreaName_MainImage} ${gridAreaName_ProductHighlights}"
-                                 "${gridAreaName_Reviews}   ${gridAreaName_ProductHighlights}"
-                                 "${gridAreaName_Reviews}   ${gridAreaName_ProductHighlights}";
-            grid-gap: 10px;
+            display: grid;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 122px;
+            margin-top: 122px;
+            
+            @media only screen and (min-width:700px) and (max-width:1000px) {
+                margin-left: 50px;
+                margin-right: 50px;
+                margin-bottom: 61px;
+                margin-top: 61px;
+            }
+            @media only screen and (max-width:600px) {
+                margin-left: 50px;
+                margin-right: 50px;
+                margin-bottom: 61px;
+                margin-top: 61px;
+            }
+            @media only screen and (max-width:500px) {
+                margin-left: 25px;
+                margin-right: 25px;
+                margin-bottom: 30.5px;
+                margin-top: 30.5px;
+            }
+            @media only screen and (min-width:700px){
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 234px 234px 234px 234px 234px 234px;
+                grid-template-areas: "${gridAreaName_MainImage} ${gridAreaName_Pricing}"
+                                     "${gridAreaName_MainImage} ${gridAreaName_Controls}"
+                                     "${gridAreaName_MainImage} ${gridAreaName_Controls}"
+                                     "${gridAreaName_MainImage} ${gridAreaName_ProductHighlights}"
+                                     "${gridAreaName_Reviews}   ${gridAreaName_ProductHighlights}"
+                                     "${gridAreaName_Reviews}   ${gridAreaName_ProductHighlights}";
+                grid-column-gap: 10px;
+            }
+            @media only screen and (max-width:700px){
+                grid-template-columns: 1fr;
+                grid-template-rows: 234px 234px 234px 234px 234px 234px 234px 234px 234px 234px 234px 234px;
+                grid-template-areas:"${gridAreaName_MainImage}"
+                                    "${gridAreaName_MainImage}"
+                                    "${gridAreaName_MainImage}"
+                                    "${gridAreaName_MainImage}"
+                                    "${gridAreaName_Pricing}"
+                                    "${gridAreaName_Controls}"
+                                    "${gridAreaName_Controls}"
+                                    "${gridAreaName_ProductHighlights}"
+                                    "${gridAreaName_ProductHighlights}"
+                                    "${gridAreaName_ProductHighlights}"
+                                    "${gridAreaName_Reviews}"
+                                    "${gridAreaName_Reviews}";
+            }
         `;
-        
+       
         console.log(fauxStore);
         return (
-            <DivWrapper>
-                <MainImage gridAreaName={gridAreaName_MainImage} title={this.state.title} primaryImage={this.state.primaryImage} alternateImages={this.state.alternateImages} />
-                <Reviews gridAreaName={gridAreaName_Reviews} />
-                <Pricing gridAreaName={gridAreaName_Pricing} />
-                <Controls gridAreaName={gridAreaName_Controls} />
-                <ProductHighlights gridAreaName={gridAreaName_ProductHighlights} />
-            </DivWrapper>
+                <DivWrapper>
+                    <MainImage gridAreaName={gridAreaName_MainImage} title={this.state.title} primaryImage={this.state.primaryImage} alternateImages={this.state.alternateImages} />
+                    <Pricing gridAreaName={gridAreaName_Pricing} />
+                    <Controls gridAreaName={gridAreaName_Controls} />
+                    <ProductHighlights gridAreaName={gridAreaName_ProductHighlights} />
+                    <Reviews gridAreaName={gridAreaName_Reviews} />
+                </DivWrapper>
         )
     } 
 }

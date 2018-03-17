@@ -13,16 +13,32 @@ export default class MainImage extends React.Component {
 
     render() {
        const Title = styled.h1 `
-            font-size: 26px;
+            font-size: 1.25rem;
             line-height: 30px;
+            text-align: center;
+            font-weight: 100; 
+       `;
+       const TitleWrapper = styled.div`
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 44px;
+       `;
+       const PrimaryImg = styled.img`
+            max-width: 100%;
+            height: auto;
        `;
        const DivWrapper = styled.div `
-            background-color:blue;
-            grid-area: ${this.props.gridAreaName}; 
+            grid-area: ${this.props.gridAreaName};
+            margin-left: auto;
+            margin-right: auto;
        `;
         return (
                 <DivWrapper>
-                    <Title>{this.props.title}</Title>
+                    <TitleWrapper>
+                        <Title>{this.props.title}</Title>
+                    </TitleWrapper>
+                    <PrimaryImg src={this.props.primaryImage}>
+                    </PrimaryImg>
                 </DivWrapper>
             )
     }
