@@ -1,6 +1,7 @@
 import React from 'react';
 import Dom from 'react-dom';
 import styled from 'styled-components';
+import Carousel from '~/components/Carousel';
 
 export default class MainImage extends React.Component {
     constructor(props){
@@ -23,22 +24,23 @@ export default class MainImage extends React.Component {
             width: 100%;
             margin-bottom: 44px;
        `;
-       const PrimaryImg = styled.img`
-            max-width: 100%;
-            height: auto;
-       `;
+    //    const PrimaryImg = styled.img`
+    //         max-width: 100%;
+    //         height: auto;
+    //    `;
        const DivWrapper = styled.div `
             grid-area: ${this.props.gridAreaName};
             margin-left: auto;
             margin-right: auto;
        `;
+       //<PrimaryImg src={this.props.primaryImage}>
+       //</PrimaryImg>
         return (
                 <DivWrapper>
                     <TitleWrapper>
                         <Title>{this.props.title}</Title>
                     </TitleWrapper>
-                    <PrimaryImg src={this.props.primaryImage}>
-                    </PrimaryImg>
+                    <Carousel primaryImage={this.props.primaryImage} alternateImages={this.props.alternateImages} />
                 </DivWrapper>
             )
     }

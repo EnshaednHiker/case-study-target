@@ -14,6 +14,7 @@ class Main extends React.Component {
         super()
         this.state = {
             title: fauxStore.CatalogEntryView[0].title,
+            //just pass in images, and work with it in the MainImage component?
             primaryImage: fauxStore.CatalogEntryView[0].Images[0].PrimaryImage[0].image,
             alternateImages: fauxStore.CatalogEntryView[0].Images[0].AlternateImages
         }
