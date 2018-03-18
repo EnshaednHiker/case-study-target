@@ -1,4 +1,5 @@
 import {Router} from 'director/build/director';
+import normalizeCss from 'normalize.css';
 import css from '~/assets/styles/global.css';
 import Main from './main';
 

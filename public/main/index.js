@@ -16,7 +16,9 @@ class Main extends React.Component {
             title: fauxStore.CatalogEntryView[0].title,
             //just pass in images, and work with it in the MainImage component?
             primaryImage: fauxStore.CatalogEntryView[0].Images[0].PrimaryImage[0].image,
-            alternateImages: fauxStore.CatalogEntryView[0].Images[0].AlternateImages
+            alternateImages: fauxStore.CatalogEntryView[0].Images[0].AlternateImages,
+            offers: fauxStore.CatalogEntryView[0].Offers[0].OfferPrice[0],
+            promotions: fauxStore.CatalogEntryView[0].Promotions
         }
     }
     componentDidMount(){
@@ -90,7 +92,7 @@ class Main extends React.Component {
         return (
                 <DivWrapper>
                     <MainImage gridAreaName={gridAreaName_MainImage} title={this.state.title} primaryImage={this.state.primaryImage} alternateImages={this.state.alternateImages} />
-                    <Pricing gridAreaName={gridAreaName_Pricing} />
+                    <Pricing gridAreaName={gridAreaName_Pricing} offers={this.state.offers} promotions={this.state.promotions} />
                     <Controls gridAreaName={gridAreaName_Controls} />
                     <ProductHighlights gridAreaName={gridAreaName_ProductHighlights} />
                     <Reviews gridAreaName={gridAreaName_Reviews} />

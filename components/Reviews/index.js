@@ -17,9 +17,12 @@ export default class Reviews extends React.Component {
             background-color: yellow;
             grid-area: ${this.props.gridAreaName}; 
        `;
+       const H2_price = styled.h2`
+       
+       `;
         return (
                 <DivWrapper>
-                    
+
                 </DivWrapper>
             )
     }
