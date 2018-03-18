@@ -18,7 +18,8 @@ class Main extends React.Component {
             primaryImage: fauxStore.CatalogEntryView[0].Images[0].PrimaryImage[0].image,
             alternateImages: fauxStore.CatalogEntryView[0].Images[0].AlternateImages,
             offers: fauxStore.CatalogEntryView[0].Offers[0].OfferPrice[0],
-            promotions: fauxStore.CatalogEntryView[0].Promotions
+            promotions: fauxStore.CatalogEntryView[0].Promotions,
+            returnPolicy: fauxStore.CatalogEntryView[0].ReturnPolicy
         }
     }
     componentDidMount(){
@@ -60,11 +61,11 @@ class Main extends React.Component {
                 margin-top: 30.5px;
             }
             @media only screen and (min-width:700px){
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 0.98fr 1.02fr;
                 grid-template-rows: 234px 234px 234px 234px 234px 234px;
                 grid-template-areas: "${gridAreaName_MainImage} ${gridAreaName_Pricing}"
                                      "${gridAreaName_MainImage} ${gridAreaName_Controls}"
-                                     "${gridAreaName_MainImage} ${gridAreaName_Controls}"
+                                     "${gridAreaName_MainImage} ${gridAreaName_ProductHighlights}"
                                      "${gridAreaName_MainImage} ${gridAreaName_ProductHighlights}"
                                      "${gridAreaName_Reviews}   ${gridAreaName_ProductHighlights}"
                                      "${gridAreaName_Reviews}   ${gridAreaName_ProductHighlights}";
@@ -79,7 +80,7 @@ class Main extends React.Component {
                                     "${gridAreaName_MainImage}"
                                     "${gridAreaName_Pricing}"
                                     "${gridAreaName_Controls}"
-                                    "${gridAreaName_Controls}"
+                                    "${gridAreaName_ProductHighlights}"
                                     "${gridAreaName_ProductHighlights}"
                                     "${gridAreaName_ProductHighlights}"
                                     "${gridAreaName_ProductHighlights}"
@@ -93,7 +94,7 @@ class Main extends React.Component {
                 <DivWrapper>
                     <MainImage gridAreaName={gridAreaName_MainImage} title={this.state.title} primaryImage={this.state.primaryImage} alternateImages={this.state.alternateImages} />
                     <Pricing gridAreaName={gridAreaName_Pricing} offers={this.state.offers} promotions={this.state.promotions} />
-                    <Controls gridAreaName={gridAreaName_Controls} />
+                    <Controls gridAreaName={gridAreaName_Controls} returnPolicy={this.state.returnPolicy} />
                     <ProductHighlights gridAreaName={gridAreaName_ProductHighlights} />
                     <Reviews gridAreaName={gridAreaName_Reviews} />
                 </DivWrapper>
