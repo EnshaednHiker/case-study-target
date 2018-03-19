@@ -20,7 +20,8 @@ class Main extends React.Component {
             offers: fauxStore.CatalogEntryView[0].Offers[0].OfferPrice[0],
             promotions: fauxStore.CatalogEntryView[0].Promotions,
             returnPolicy: fauxStore.CatalogEntryView[0].ReturnPolicy,
-            itemDescription: fauxStore.CatalogEntryView[0].ItemDescription
+            itemDescription: fauxStore.CatalogEntryView[0].ItemDescription,
+            customerReview: fauxStore.CatalogEntryView[0].CustomerReview
         }
     }
     componentDidMount(){
@@ -63,18 +64,17 @@ class Main extends React.Component {
             }
             @media only screen and (min-width:700px){
                 grid-template-columns: 0.98fr 1.02fr;
-                grid-template-rows: 234px 234px 234px 234px 234px 234px;
+                grid-template-rows: 234px 234px 234px 234px 1fr;
                 grid-template-areas: "${gridAreaName_MainImage} ${gridAreaName_Pricing}"
                                      "${gridAreaName_MainImage} ${gridAreaName_Controls}"
                                      "${gridAreaName_MainImage} ${gridAreaName_ProductHighlights}"
                                      "${gridAreaName_MainImage} ${gridAreaName_ProductHighlights}"
-                                     "${gridAreaName_Reviews}   ${gridAreaName_ProductHighlights}"
                                      "${gridAreaName_Reviews}   ${gridAreaName_ProductHighlights}";
                 grid-column-gap: 10px;
             }
             @media only screen and (max-width:700px){
                 grid-template-columns: 1fr;
-                grid-template-rows: 234px 234px 234px 234px 234px 234px 234px 234px 234px 234px 234px 234px;
+                grid-template-rows: 234px 234px 234px 234px 234px 234px 300px 1fr;
                 grid-template-areas:"${gridAreaName_MainImage}"
                                     "${gridAreaName_MainImage}"
                                     "${gridAreaName_MainImage}"
@@ -82,22 +82,20 @@ class Main extends React.Component {
                                     "${gridAreaName_Pricing}"
                                     "${gridAreaName_Controls}"
                                     "${gridAreaName_ProductHighlights}"
-                                    "${gridAreaName_ProductHighlights}"
-                                    "${gridAreaName_ProductHighlights}"
-                                    "${gridAreaName_ProductHighlights}"
                                     "${gridAreaName_Reviews}"
-                                    "${gridAreaName_Reviews}";
             }
+            @media only screen and (max-width:400px){
+                grid-template-rows: 234px 234px 234px 234px 234px 234px 350px 234px 234px;
+            }
+
         `;
-       
-        console.log(fauxStore);
         return (
                 <DivWrapper>
                     <MainImage gridAreaName={gridAreaName_MainImage} title={this.state.title} primaryImage={this.state.primaryImage} alternateImages={this.state.alternateImages} />
                     <Pricing gridAreaName={gridAreaName_Pricing} offers={this.state.offers} promotions={this.state.promotions} />
                     <Controls gridAreaName={gridAreaName_Controls} returnPolicy={this.state.returnPolicy} />
                     <ProductHighlights gridAreaName={gridAreaName_ProductHighlights} itemDescription={this.state.itemDescription} />
-                    <Reviews gridAreaName={gridAreaName_Reviews} />
+                    <Reviews gridAreaName={gridAreaName_Reviews} customerReview={this.state.customerReview} />
                 </DivWrapper>
         )
     } 
