@@ -2,34 +2,24 @@
 
 case study for completing recruiting at Target
 
-## Installation
 
-```sh
-npm install case-study-target --save
-```
-
-
-## Tests
-
-```sh
-npm install
-npm test
-```
 
 ## Dependencies
 
 - [director](https://github.com/flatiron/director): A client Side/Server Side Router
 - [react](https://github.com/facebook/react): React is a JavaScript library for building user interfaces.
 - [react-dom](https://github.com/facebook/react): React package for working with the DOM.
+- [dateformat](https://github.com/felixge/node-dateformat): A node.js package for Steven Levithan's excellent dateFormat() function.
+- [normalize.css](https://necolas.github.io/normalize.css/): makes browsers render all elements more consistently and in line with modern standards
+- [pure-react-carousel](https://github.com/express-labs/pure-react-carousel): Impartial React carousel.
+- [styled-components](https://www.styled-components.com/docs/basics#styling-any-components): Write actual CSS in Javascript 
 
 ## Dev Dependencies
 
-- [babel](https://github.com/babel/babel/tree/master/packages): Turn ES6 code into readable vanilla ES5 with source maps
+- [babel-cli](https://github.com/babel/babel/tree/master/packages): Turn ES6 code into readable vanilla ES5 with source maps
 - [babel-core](https://github.com/babel/babel/tree/master/packages): Babel compiler core.
 - [babel-loader](https://github.com/babel/babel-loader): babel module loader for webpack
-- [babel-preset-es2015](https://github.com/babel/babel/tree/master/packages): Babel preset for all es2015 plugins.
-- [babel-preset-es2016](https://github.com/babel/babel/tree/master/packages): Babel preset for all es2016 plugins.
-- [babel-preset-es2017](https://github.com/babel/babel/tree/master/packages): Babel preset for all es2017 plugins.
+- [babel-preset-env](https://babeljs.io/docs/plugins/preset-env/)Babel preset that automatically determines the Babel plugins you need based on your supported environments.
 - [babel-preset-react](https://github.com/babel/babel/tree/master/packages): Babel preset for all React plugins.
 - [css-loader](https://github.com/webpack/css-loader): css loader module for webpack
 - [dotenv-webpack](https://github.com/mrsteele/dotenv-webpack): A simple webpack plugin to support dotenv.

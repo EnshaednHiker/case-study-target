@@ -4,7 +4,7 @@
   "description": "case study to complete for Target Recruiting",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch",
+    "test": "",
     "start": "./node_modules/.bin/webpack-dev-server",
     "build": "webpack -p",
     "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
@@ -14,7 +14,6 @@
   "dependencies": {
     "dateformat": "^3.0.3",
     "director": "^1.2.8",
-    "jquery": "^3.3.1",
     "normalize.css": "^8.0.0",
     "pure-react-carousel": "^1.11.1",
     "react": "^16.2.0",
