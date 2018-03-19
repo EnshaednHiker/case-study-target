@@ -249,7 +249,7 @@ export default class Controls extends React.Component {
             color: #666666;
             padding-left: 14px;
         `; 
-        console.log("day: ",daysToReturn);
+        
         return (
                 <DivWrapper>
                     <QuantityWrapper>

@@ -19,7 +19,8 @@ class Main extends React.Component {
             alternateImages: fauxStore.CatalogEntryView[0].Images[0].AlternateImages,
             offers: fauxStore.CatalogEntryView[0].Offers[0].OfferPrice[0],
             promotions: fauxStore.CatalogEntryView[0].Promotions,
-            returnPolicy: fauxStore.CatalogEntryView[0].ReturnPolicy
+            returnPolicy: fauxStore.CatalogEntryView[0].ReturnPolicy,
+            itemDescription: fauxStore.CatalogEntryView[0].ItemDescription
         }
     }
     componentDidMount(){
@@ -95,7 +96,7 @@ class Main extends React.Component {
                     <MainImage gridAreaName={gridAreaName_MainImage} title={this.state.title} primaryImage={this.state.primaryImage} alternateImages={this.state.alternateImages} />
                     <Pricing gridAreaName={gridAreaName_Pricing} offers={this.state.offers} promotions={this.state.promotions} />
                     <Controls gridAreaName={gridAreaName_Controls} returnPolicy={this.state.returnPolicy} />
-                    <ProductHighlights gridAreaName={gridAreaName_ProductHighlights} />
+                    <ProductHighlights gridAreaName={gridAreaName_ProductHighlights} itemDescription={this.state.itemDescription} />
                     <Reviews gridAreaName={gridAreaName_Reviews} />
                 </DivWrapper>
         )
