@@ -30,7 +30,6 @@ export default class Reviews extends React.Component {
                 
             })
         });
-        console.log(reviewInfo);
 
         const DivWrapper = styled.div `
             grid-area: ${this.props.gridAreaName};

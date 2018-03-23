@@ -1,5 +1,6 @@
 import React from 'react';
 import Dom from 'react-dom';
+import {Helmet} from "react-helmet";
 import fauxStore from '~/case-study/item-data.json';
 import MainImage from '~/components/MainImage';
 import Reviews from '~/components/Reviews';
@@ -14,7 +15,6 @@ class Main extends React.Component {
         super()
         this.state = {
             title: fauxStore.CatalogEntryView[0].title,
-            //just pass in images, and work with it in the MainImage component?
             primaryImage: fauxStore.CatalogEntryView[0].Images[0].PrimaryImage[0].image,
             alternateImages: fauxStore.CatalogEntryView[0].Images[0].AlternateImages,
             offers: fauxStore.CatalogEntryView[0].Offers[0].OfferPrice[0],
@@ -24,9 +24,7 @@ class Main extends React.Component {
             customerReview: fauxStore.CatalogEntryView[0].CustomerReview
         }
     }
-    componentDidMount(){
-        document.title = this.state.title;
-    }
+
     render() {
         const gridAreaName_MainImage = "main-image";
         const gridAreaName_Pricing = "pricing";
@@ -91,6 +89,9 @@ class Main extends React.Component {
         `;
         return (
                 <DivWrapper>
+                    <Helmet>
+                        <title>{this.state.title}</title>
+                    </Helmet>
                     <MainImage gridAreaName={gridAreaName_MainImage} title={this.state.title} primaryImage={this.state.primaryImage} alternateImages={this.state.alternateImages} />
                     <Pricing gridAreaName={gridAreaName_Pricing} offers={this.state.offers} promotions={this.state.promotions} />
                     <Controls gridAreaName={gridAreaName_Controls} returnPolicy={this.state.returnPolicy} />

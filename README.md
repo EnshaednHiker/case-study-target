@@ -2,7 +2,14 @@
 
 case study for completing recruiting at Target
 
+## Roadmap for Improvements
 
+- Redo the MainImage component, tear our pure-react-carousel and do it from scratch.
+- Make the MainImage component pixel perfect
+- Add enzyme/jest tests (at the very least smoke tests but also testing applicaple state and/or props ) 
+- Do an audit of ARIA accessibility issues
+- Do an audit for SEO issues
+- Refactor components to abstract away more subcomponents to make the components shorter, potentially more readable, and probably more reusable
 
 ## Dependencies
 
